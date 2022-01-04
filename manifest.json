@@ -1,0 +1,10 @@
+{
+  "name": "JIRA Gitflow",
+  "description": "Copy into your clipboard commands to create a Gitflow branch based on a JIRA ticket.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["storage", "activeTab", "scripting"]
+}
