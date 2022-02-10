@@ -1,7 +1,7 @@
 copyFeature.addEventListener("click", async () => {
   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
-  chrome.storage.sync.set({ type: "feature" }, () => {
+  chrome.storage.sync.set({ type: "feat" }, () => {
     chrome.scripting.executeScript({
       target: { tabId: tab.id },
       function: copyToClipboard,
@@ -38,7 +38,8 @@ function copyToClipboard() {
     const description = matches[2];
     const text = `git checkout -b ${type}/${key}/${description
       .toLowerCase()
-      .replace(/\s+/g, "-")}`;
+      .replace(/\s+/g, "-")
+      .replace(":", "")}`;
     const input = document.createElement("input");
     input.setAttribute("value", text);
     document.body.appendChild(input);
