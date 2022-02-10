@@ -39,7 +39,7 @@ function copyToClipboard() {
     const text = `git checkout -b ${type}/${key}/${description
       .toLowerCase()
       .replace(/\s+/g, "-")
-      .replace(":", "")}`;
+      .replace(":", "-")}`;
     const input = document.createElement("input");
     input.setAttribute("value", text);
     document.body.appendChild(input);
