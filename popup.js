@@ -35,7 +35,7 @@ function copyToClipboard() {
     const regex = /\[([A-Z].*-\d.*)\] (.*) - Jira/;
     const matches = document.title.match(regex);
     const key = matches[1];
-    const description = matches[2];
+    const description = matches[2].replace("[iOS] ", "");
     const text = `git checkout -b ${type}/${key}/${description
       .toLowerCase()
       .replace(/\s+/g, "-")
